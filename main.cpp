@@ -16,12 +16,13 @@ video: Chapter 2 - Part 3
  
  1) Write down the names of the 6 major primitive types available in C++  here:
  
- 
- 
- 
- 
- 
- 
+ integer
+ floating point
+ boolean
+ double
+ character 
+ wide character 
+  
  
  
  
@@ -59,10 +60,29 @@ void variableDeclarations()
 {
     //example:
     int number = 2; //declaration of a variable named "number", that uses the primitive type 'int', and the variable's initial value is '2'
-    
+
+    int apples = 3;
+    int tiles = 4;
+    int cars = 7;
+
+    float weight = 100.3f;
+    float speed = 5.2f;
+    float acceleration = 7.8f;
+
+    bool plea = false;
+    bool locked = true;
+    bool open = true;
+
+    double acres = 3.5;
+    double miles = 26.2;
+    double years = 4.5;
+
+    char grade = 'B';
+    char rating = 'A';
+    char favLetter = 'S';
 
     
-    ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
+    ignoreUnused(number, apples, tiles, cars, weight, speed, acceleration, plea, locked, open, acres, miles, years, grade, rating, favLetter); //passing each variable declared to the ignoreUnused() function
 }
 
 /*
@@ -79,42 +99,87 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 /*
  1)
  */
+ float appleWeight(int howMany, float weightPerApple = 5.0f)
+ {
+     ignoreUnused(howMany, weightPerApple);
+     return {};
+ }
 
 /*
  2)
  */
+ char grade(int firstTest, int secondTest)
+ {
+     ignoreUnused(firstTest, secondTest);
+     return {};
+ }
+
 
 /*
  3)
  */
-
+void lieDetector(int lies, int truth)
+{
+    ignoreUnused(lies, truth);
+}
 /*
  4)
  */
+bool onOrOff(double meterLevel1, double meterLevel2 = 3.5)
+{
+    ignoreUnused(meterLevel1, meterLevel2);
+    return {};
+}
 
 /*
  5)
  */
+int totalAnimals(int bears, int horses = 27)
+{
+    ignoreUnused(bears, horses);
+    return {};
+}
 
 /*
  6)
  */
-
+float weightOfSnack(float chocoChips, float bananas = 3.5f, float sprinkles = 8.4f)
+{
+    ignoreUnused(chocoChips, bananas, sprinkles);
+    return {};
+}
 /*
  7)
  */
-
+double lifeExpectancy(bool smoker, bool diabetic, bool exercises = true)
+{ 
+    ignoreUnused(smoker, diabetic, exercises);
+    return {};
+}
 /*
  8)
  */
-
+bool covidTest(float swabResults, char testType = 'p')
+{
+    ignoreUnused(swabResults, testType);
+    return {};
+}
 /*
  9)
  */
-
+bool safeToListen(float distanceFromSource, float decibelReading = 120.0f)
+{
+    ignoreUnused(distanceFromSource, decibelReading);
+    return {};
+}
 /*
  10)
  */
+int sumOfInts(int firstNum, int secondNum = 5)
+{
+    ignoreUnused(firstNum, secondNum);
+    return {};
+}
 
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
@@ -136,27 +201,27 @@ int main()
     auto carRented = rentACar(6, 2); 
     
     //1)
-    
+    auto weightOfApples = appleWeight(5, 3.2f); 
     //2)
-    
+    auto finalGrade = grade(50, 23);
     //3)
-    
+    lieDetector(5, 7);
     //4)
-    
+    auto statusOfPower = onOrOff(32.3);
     //5)
-    
+    auto allAnimals = totalAnimals(4, 6);
     //6)
-    
+    auto snackWeight = weightOfSnack(15.4f);
     //7)
-    
+    auto lifeInYears = lifeExpectancy(true, true, false);
     //8)
-    
+    auto infection = covidTest(84.2f, 'a');
     //9)
-    
+    auto safety = safeToListen(15.4f, 140.0f);
     //10)
+    auto sumOfNums = sumOfInts(7, 8);
     
-    
-    ignoreUnused(carRented);
+    ignoreUnused(carRented, weightOfApples, finalGrade, statusOfPower, allAnimals, snackWeight, lifeInYears, infection, safety, sumOfNums);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
